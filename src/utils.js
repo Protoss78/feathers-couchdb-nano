@@ -1,4 +1,4 @@
-import errors from 'feathers-errors';
+import errors from '@feathersjs/errors';
 import * as msgs from './msgs';
 
 // https://github.com/feathersjs/feathers-errors

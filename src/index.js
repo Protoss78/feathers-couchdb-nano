@@ -1,6 +1,6 @@
 import Proto from 'uberproto';
-import errors from 'feathers-errors';
-import filter from 'feathers-query-filters';
+import errors from '@feathersjs/errors';
+import { filterQuery } from '@feathersjs/commons';
 import * as msgs from './msgs';
 import * as utils from './utils';
 
@@ -38,7 +38,7 @@ class Service {
 
   find (params = {}) {
     const paginate = params.paginate || this.paginate;
-    const result = this._find(params, where => filter(where, paginate));
+    const result = this._find(params, where => filterQuery(where, paginate));
 
     return result
       .then(page => {
@@ -98,7 +98,7 @@ class Service {
     });
   }
 
-  _find (params, getFilter = filter) {
+  _find (params, getFilter = filterQuery) {
     const { filters, query } = getFilter(params.query || {});
     const [design, view] = utils.getViewFromQuery(query.q);
 

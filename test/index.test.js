@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { createServer } from 'mock-couch';
 import { DOC_NAME, DB_NAME, DB_URI, DB_PORT } from './constants';
 import { omit, pick } from 'lodash';
-import feathers from 'feathers';
+import feathers from '@feathersjs/feathers';
 import nano from 'nano';
 import plugin from '../src';
 import * as msgs from '../src/msgs';

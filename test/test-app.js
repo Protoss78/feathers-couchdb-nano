@@ -1,8 +1,8 @@
 import { DOC_NAME, DB_NAME, DB_URI } from './constants';
-import feathers from 'feathers';
-import rest from 'feathers-rest';
+import feathers from '@feathersjs/feathers';
+import rest from '@feathersjs/express/rest';
 import nano from 'nano';
-import errorHandler from 'feathers-errors/handler';
+import errorHandler from '@feathersjs/errors';
 import bodyParser from 'body-parser';
 import plugin from '../src';
 
